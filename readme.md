@@ -5,7 +5,7 @@
 </centre>
 
 # A light ass (130 lines) alternative of big ass taillwind
-No need to type exact css property. coat.js autocompletes
+No need to type exact css property. Coat.js autocompletes
 
 ```
 <div coat="m-1vw p-1vw">😄</div> -> <div style="margin:1vw; padding:1vw;">😄</div>
@@ -34,6 +34,7 @@ or
 <script type="module" src="https://cdn.jsdelivr.net/gh/itsarnavsingh/coat/coat.js"> </script>
 
 ```
+<h3>Get your hands dirty with demo files @ ./demos/</h3>
 
 # Motivations
 
