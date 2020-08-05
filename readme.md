@@ -1,7 +1,7 @@
 
 <centre>
     <img src='./logo.png'>
-    <h1>Coat.JS</h1>
+    <h1><bold>Coat.JS</bold></h1>
 </centre>
 
 # A light ass (130 lines) alternative of big ass taild
@@ -27,11 +27,11 @@ coat.js autocompletes css, no need to type exact css property
 Just inlude coat.js and forget about it. No configuration needed
 
 ```
-import {coat} from '../coat.js'
+import {coat} from 'https://cdn.jsdelivr.net/gh/itsarnavsingh/coat/coat.js'
 
 or
 
-<script type="module" src="../coat.js"> </script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/itsarnavsingh/coat/coat.js"> </script>
 
 ```
 
@@ -45,5 +45,5 @@ or
 
 # FAQ
 
-<h3>What if dom is updated? can coat.js handle that</h3> >
+<h3>What if dom is updated? can coat.js handle that?</h3>
 Coat.JS listens for dom changes and parses coat style for only that element. No unnecessary processing is done 
