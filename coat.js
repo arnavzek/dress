@@ -42,7 +42,10 @@ window.addEventListener('load',()=>{
         if(!element) element = document.body
 
         let coatAttribute = element.getAttribute && element.getAttribute('coat')
-        if(coatAttribute) element.setAttribute('style', coat(coatAttribute) )
+        if(coatAttribute){
+            element.setAttribute('style', coat(coatAttribute) )
+            element.removeAttribute('coat')
+        } 
         
         if(!element.children) return
 
@@ -81,16 +84,22 @@ export function coat(classes){
     for(let cls of classes){
         if(!cls) continue
         //only apply the style if no prefix exists or the type matches
-        if( cls.split(':').length <= 2 || cls.indexOf(type+':') !== -1){
+        if( cls.split('-').length <= 2 || cls.indexOf(type+'-') !== -1){
 
-            if(cls.indexOf(type+':') !== -1){
-                cls = cls.replace(type+':','')
+            if(cls.indexOf(type+'-') !== -1){
+                cls = cls.replace(type+'-','')
                 cls += '!important'
             } 
-            let claSplit = cls.split(':')
+            let claSplit = cls.split('-')
+
+            //hyphen is used istead of colon because people might give space after hyphen and reading hyphen is easy
             
             let property = claSplit[0]
-            let value = claSplit[1]
+            let value = '' 
+            
+            for(let i=1; i<claSplit.length; i++){
+                value += claSplit[i]
+            }
 
            
             

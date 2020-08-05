@@ -1,13 +1,13 @@
 
 <centre>
-<img src='./logo.png'>
-<h1>Coat.JS</h1>
+    <img src='./logo.png'>
+    <h1>Coat.JS</h1>
 </centre>
 
 # A light ass (130 lines) alternative of big ass taild
 coat.js autocompletes css, no need to type exact css property
 
-``
+```
 <div coat="m-1vw p-1vw">😄</div> -> <div style="margin:1vw; padding:1vw;">😄</div>
 <div coat="mar-1vw pad-1vw">😄</div> -> <div style="margin:1vw; padding:1vw;">😄</div>
 <div coat="mar-1vw pa-1vw">😄</div> -> <div style="margin:1vw; padding:1vw;">😄</div>
@@ -20,20 +20,20 @@ coat.js autocompletes css, no need to type exact css property
 <div coat="borderr-1vw">😄</div> -> <div style="border-radius:1vw">😄</div>
 <div coat="borderRa-1vw">😄</div> -> <div style="border-radius:1vw">😄</div>
 
-``
+```
 
 # How to use?
 
 Just inlude coat.js and forget about it. No configuration needed
 
-``
+```
 import {coat} from '../coat.js'
 
 or
 
 <script type="module" src="../coat.js"> </script>
 
-``
+```
 
 # Motivations
 
