@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lit Element Example</title>
+</head>
+<body>
+
+<the-main></the-main>
+
+<script type="module">
+
+    import { css, LitElement, html } from 'https://cdn.pika.dev/lit-element';
+    import { Link, Routal } from '/routal.js'
+    import {coat} from '../coat.js'
+
+
+    export class main extends LitElement {
+
+
+        render(){
+
+            return html`
+            <div id="container" coat="pc:b:#000 b:yellow c:pink marginl:4vw h:5vw w:6vw ov:hidden"></div>
+            `
+        }
+    
+    }
+
+    customElements.define('the-main',main)
+
+</script>
+
+
+</body>
+</html>
