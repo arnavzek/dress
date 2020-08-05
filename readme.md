@@ -36,6 +36,17 @@ or
 ```
 <h3>Get your hands dirty with demo files @ ./demos/</h3>
 
+# Media Query
+Coat.js is Mobile First
+
+Prefix 'pc-' For Laptops and PC
+
+Prefix 'tablet-' For Tablets
+
+```
+<div coat="pc-m-1vw p-1vw">😄</div>  
+```
+
 # Motivations
 
 * less CSS best CSS
