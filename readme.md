@@ -4,8 +4,8 @@
     <h1><bold>Coat.JS</bold></h1>
 </centre>
 
-# A light ass (130 lines) alternative of big ass taild
-coat.js autocompletes css, no need to type exact css property
+# A light ass (130 lines) alternative of big ass taillwind
+No need to type exact css property. coat.js autocompletes
 
 ```
 <div coat="m-1vw p-1vw">😄</div> -> <div style="margin:1vw; padding:1vw;">😄</div>
