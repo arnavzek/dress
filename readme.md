@@ -4,21 +4,21 @@
     <h1><bold>Coat.JS</bold></h1>
 </centre>
 
-# A light ass (130 lines) alternative of big ass taillwind
+# A light ass (130 lines) alternative of big ass Taillwind 
 No need to type exact css property. Coat.js autocompletes
 
 ```
-<div coat="m-1vw p-1vw">😄</div> -> <div style="margin:1vw; padding:1vw;">😄</div>
-<div coat="mar-1vw pad-1vw">😄</div> -> <div style="margin:1vw; padding:1vw;">😄</div>
-<div coat="mar-1vw pa-1vw">😄</div> -> <div style="margin:1vw; padding:1vw;">😄</div>
+<div coat="m-1vw p-1vw">😄</div>        ->     <div style="margin:1vw; padding:1vw;">😄</div>
+<div coat="mar-1vw pad-1vw">😄</div>    ->     <div style="margin:1vw; padding:1vw;">😄</div>
+<div coat="mar-1vw pa-1vw">😄</div>     ->     <div style="margin:1vw; padding:1vw;">😄</div>
 
 
-<div coat="bo-0.1vw-solid-#555">😄</div> -> <div style="border:0.1vw solid #555;">😄</div>
-<div coat="bor-0.1vw-solid-#555">😄</div> -> <div style="border:0.1vw solid #555;">😄</div>
+<div coat="bo-0.1vw-solid-#555">😄</div>    ->     <div style="border:0.1vw solid #555;">😄</div>
+<div coat="bor-0.1vw-solid-#555">😄</div>   ->     <div style="border:0.1vw solid #555;">😄</div>
 
 
-<div coat="borderr-1vw">😄</div> -> <div style="border-radius:1vw">😄</div>
-<div coat="borderRa-1vw">😄</div> -> <div style="border-radius:1vw">😄</div>
+<div coat="borderr-1vw">😄</div>    ->      <div style="border-radius:1vw">😄</div>
+<div coat="borderRa-1vw">😄</div>   ->      <div style="border-radius:1vw">😄</div>
 
 ```
 
