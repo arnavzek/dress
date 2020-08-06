@@ -1,5 +1,4 @@
 /*
-coat.js
 
 How it works?
 splits the css by using dash
@@ -40,7 +39,7 @@ let mainDrees = {}
 let dress = new Proxy({},{set:function(obj, key, value){
     
     mainDrees[key] = value
-    
+
     function setMediaQuery(code){
         if(key.indexOf('pc_') !== -1) addToStyleSheet('@media (min-width: 1300px)', code)
         if(key.indexOf('tablet_') !== -1) addToStyleSheet('@media (min-width: 1300px)', code) 

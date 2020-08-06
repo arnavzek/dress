@@ -7,12 +7,11 @@
 # A light ass CSS runtime autocompleter
 Wrting css in JS just became fashionable.
 No need to type exact css property.
-When you run your file, Dress.js autocompletes CSS, you wrote in JS and turns them into a stylesheet.
+When you run your file, Dress.js autocompletes CSS you wrote in JS and turns them into a stylesheet.
 
 # How to use?
-<img src='./demo.png'>
 
-Import Dress.js
+Import Dress.js from CDN (not yet on NPM, sorry!)
 
 ```
 import {dress} from 'https://cdn.jsdelivr.net/gh/itsarnavsingh/dress/dress.js'
@@ -23,15 +22,29 @@ or
 
 ```
 Write CSS, just in two to three words.<br>
-background can be written as b,back,backg,background.....<br>
-background-color can be written as bC,backC,backColo,backgroundColor...<br>
+```
+background can be written as b,back,backg,background.....
+background-color can be written as bC,backC,backColo,backgroundColor...
+```
 <br><br>
 note: capital c in the second example is important, letter after hyphen must be capital in shorthand
 <br><br>
 When there are multiple candidates for a shorthand, the shorter one will be given benifit of doubt<br>
-like for "ma", mask and margin. mask will be choosen as it is shorter
-<br><br>
-There are over 520 CSS properties, all of them can be referenced by this format
+like if you type "ma", both mask and margin. mask will be choosen as it is shorter
+
+<br>
+but margin is more used. so, most used properties have been registered to one letter shorthand<br>
+m means margin <br>
+b means beackground <br>
+c means color <br>
+p means padding <br>
+<br>
+There are over 520 CSS properties, all of them can be referenced by only this much knowledge
+<br>
+
+# Example
+<img src='./demo.png'>
+
 ```
  
     //JS
@@ -77,7 +90,7 @@ There are over 520 CSS properties, all of them can be referenced by this format
 <h3>Get your hands dirty with demo files @ ./demos/</h3>
 
 # Media Query
-dress.js is Mobile First
+Dress.js is Mobile First
 
 Prefix 'pc_' For Laptops and PC
 
@@ -85,21 +98,22 @@ Prefix 'tablet_' For Tablets
 
 ```
 //example
-extradress.pc_body = " b:#999"
+dress.pc_body = "b:#999"
 ```
 
 
 # Motivations
 
-* Add external style to shadow dom element while keeping its shadow dom styles
-* Less CSS, best CSS, cause it's easy to manage
-* kKeep media query of element at the same place, like SASS. In standard css you are required to separte them by 100s of lines 
-* Mobile first css library cause make simple thigs complicated is easier than making complicated things simple
-* Easy inline media query
+* Adding external style to shadow dom element while keeping its shadow dom styles by using wear() function 
+* Less CSS is easy to manage
+* Keeps media query of element at the same place, like SASS. In standard css you are required to separte them by 100s of lines
+* Because this is a CSS in JS library you can all the logics without a preprocessor like SASS 
+* Mobile first in no brainer, cause make simple thigs complicated is easier than making complicated things simple
+* Easy inline media query just call wear() it can reference call name as well as css property. classes can be used as property itself
 * Designed with best practices in mind, thats why, default css selector is classes  
-* dress.js is compatible will all component library because of the way it works
+* Dress.js is compatible will all component library because of the way it works
 
 # FAQ
 
 <h3>What if dom is updated? can dress.js handle that?</h3>
-dress.JS listens for dom changes and parses dress style for only that element. No unnecessary processing is done 
+Yes, Dress.js adds css rule to stylesheet as soon as it is declared
