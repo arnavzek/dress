@@ -22,16 +22,16 @@ or
 <script type="module" src="https://cdn.jsdelivr.net/gh/itsarnavsingh/dress/dress.js"> </script>
 
 ```
-Write CSS, just in two to three words.
-background can be written as b,back,backg,background.....
-background-color can be written as bC,backC,backColo,backgroundColor...
-
+Write CSS, just in two to three words.<br>
+background can be written as b,back,backg,background.....<br>
+background-color can be written as bC,backC,backColo,backgroundColor...<br>
+<br><br>
 note: capital c in the second example is important, letter after hyphen must be capital in shorthand
-
-When there are multiple candidates for a shorthand, the shorter one will be given benifit of doubt
+<br><br>
+When there are multiple candidates for a shorthand, the shorter one will be given benifit of doubt<br>
 like for "ma", mask and margin. mask will be choosen as it is shorter
-
-There are over 520 css properties, all of them can be referenced by this format
+<br><br>
+There are over 520 CSS properties, all of them can be referenced by this format
 ```
  
     //JS
