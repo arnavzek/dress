@@ -39,12 +39,12 @@ or
 # Media Query
 Coat.js is Mobile First
 
-Prefix 'pc:' For Laptops and PC
+Prefix 'pc-' For Laptops and PC
 
-Prefix 'tablet:' For Tablets
+Prefix 'tablet-' For Tablets
 
 ```
-<div coat="pc:m:1vw p:1vw">😄</div>  
+<div coat="pc-m:1vw p:1vw">😄</div>  
 ```
 
 # Example
