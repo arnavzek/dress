@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lit Element Example</title>
 </head>
-<body>
+<body coat="main h:100vh ov:hidden b:#fff;">
 
-<the-main></the-main>
+<the-main coat="fFa:roboto; c:#222 bSha:1vw 1vw 1vw #0000005c b:linear-gradient(45deg, #CDDC39, #FFC107)  mTo:2vw ov:hidden bRa:5vw w:62% pBo:2vw"></the-main>
 
 <script type="module">
 
     import { css, LitElement, html } from 'https://cdn.pika.dev/lit-element';
     import { Link, Routal } from '/routal.js'
-    import {coat} from '../coat.js'
+    import {extraCoat} from '../coat.js'
 
+    extraCoat.main = ' di:grid pI:center c:#fff'
+    extraCoat.image = 'pI:center bRa:100vw m:2vw w:12vw  h:12vw b:#000 flo:left'
+    extraCoat.title = ' fS:xl'
+    extraCoat.desc = ' fS:m m:1vw w:60% flo:left'
 
     export class main extends LitElement {
 
@@ -22,7 +26,20 @@
         render(){
 
             return html`
-            <div id="container" coat="pc-b-#000 b-yellow c-pink marginl-4vw h-5vw w-6vw ov-hidden"></div>
+
+           
+        
+            <img coat="image" src="./card.jpg">
+                    <div coat="desc fS:l">
+                        <h3 coat="title fS:xl mTo:1vw mBo:1vw"> Contact Forrest </h3>
+                        Forrest is an old guy, He is slowly dying.
+                        He is really a good person, He cares about everyone
+                        Even though we have hurt him so much, He still loves us
+                    </div>
+                </div>
+            
+     
+
             `
         }
     

@@ -52,6 +52,8 @@ window.addEventListener('load',()=>{
         for(let child of element.children){
             if(child.shadowRoot){
                 observer.observe(child.shadowRoot, config)//even if a observer method is called twice on shdowRoot, it is handled by  MutationObserver
+                
+                domUpdated(child)
                 return domUpdated(child.shadowRoot)
             }
 
@@ -63,7 +65,23 @@ window.addEventListener('load',()=>{
 
 })
 
-export function coat(classes){
+let extraCoat = {}
+
+export {extraCoat}
+
+function replaceGlobally(original, searchTxt, replaceTxt) {
+    const regex = new RegExp(searchTxt, 'g');
+    return original.replace(regex, replaceTxt) ;
+  }
+
+ function coat(classes){
+
+
+    for(let key in extraCoat){
+
+
+        classes = replaceGlobally(classes,key,extraCoat[key]) 
+    }
 
 
     classes = classes.split(' ')
@@ -80,29 +98,60 @@ export function coat(classes){
     //the order is important
 
     //console.log(classes)
+
+    function thisStyleIsForPhone(cls){
+        if(cls.indexOf('tablet:') !== -1) return false
+        if(cls.indexOf('pc:') !== -1) return false
+        return true
+    }
+
+    let actualClasses = []
+    let currentClass = 0
+    for(let i=0; i<classes.length; i++){
+
+        if(!actualClasses[currentClass]) actualClasses[currentClass] = ''
+
+        actualClasses[currentClass] +=  classes[i]+' '
+
+        if(classes[i+1]){
+            if(classes[i+1].indexOf(':') !== -1) currentClass++
+        }
+    }
     
-    for(let cls of classes){
+    console.log(classes,actualClasses)
+    
+    for(let cls of actualClasses){
+        cls = cls.trim()
+        console.log(cls)
         if(!cls) continue
-        //only apply the style if no prefix exists or the type matches
-        if( cls.split('-').length <= 2 || cls.indexOf(type+'-') !== -1){
+        //only apply the style if style is for phone or the type matches
+        if( thisStyleIsForPhone(cls) == true || cls.indexOf(type+'-') !== -1){
 
             if(cls.indexOf(type+'-') !== -1){
                 cls = cls.replace(type+'-','')
                 cls += '!important'
-            } 
-            let claSplit = cls.split('-')
+            }
+
+            let claSplit = cls.split(':')
 
             //hyphen is used istead of colon because people might give space after hyphen and reading hyphen is easy
             
             let property = claSplit[0]
-            let value = '' 
-            
-            for(let i=1; i<claSplit.length; i++){
-                value += claSplit[i]
+            let value = claSplit[1] 
+            value = value.trim()
+            value = ' '+value
+            let registeredValues = {
+                xxs:'3px',
+                xs:'7px',
+                s:'14px',
+                m:'21px',
+                l:'28px',
+                xl:'35px',
+                xxl:'42px',
+                xxxl:'49px',
             }
-
            
-            
+            if(registeredValues[value.trim()]) value = registeredValues[value.trim()]
             style += getInlineStyle(property,value)
         }
 
@@ -142,11 +191,26 @@ function JS_to_CSS_property(property){
 
 let template = document.createElement('div')
 
+function capitalize(name){
+    if(!name) return name
+    return name.charAt(0).toUpperCase() + name.slice(1)
+}
 
+//short hands must not be learned, just the patterns need to be learned
 
 function getInlineStyle(property,value){
 
+    
+
+    
+
     let possibleProperties = []
+
+    let parts = JS_to_CSS_property(property).split('-')
+    let firstPart = parts[0]
+    let secondPart = capitalize(parts[1]) 
+
+    console.log(firstPart,secondPart)
     //shorter string will have higher rank as shorter strings are used more freuently
 
     let specialProperties = {b:'background',c:'color',m:'margin'}
@@ -156,8 +220,14 @@ function getInlineStyle(property,value){
     }else{
         for(let key in template.style){
         
-            if(key.substr(0,property.length).toLowerCase() == property.toLowerCase()  ) {
-                possibleProperties.push(key)
+            if(key.substr(0,firstPart.length).toLowerCase() == firstPart  ) {
+
+                if(secondPart){
+                    if(key.indexOf(secondPart) !== -1) possibleProperties.push(key)
+                }else{
+                    possibleProperties.push(key)
+                }
+                
             }
         }
     }
@@ -165,7 +235,11 @@ function getInlineStyle(property,value){
 
     possibleProperties.sort((a,b)=> a.length-b.length)
 
-    if(!possibleProperties[0]) throw Error(`For property ${property} no mapping exist`)
-    return `${JS_to_CSS_property(possibleProperties[0])}:${value};`
+    if(!possibleProperties[0]){
+        console.warn(`For property ${property} no mapping exist`)
+        return ''
+    } 
+    return `
+    ${JS_to_CSS_property(possibleProperties[0])}:${value};`
 }
 
