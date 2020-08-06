@@ -152,6 +152,7 @@ function replaceGlobally(original, searchTxt, replaceTxt) {
     return style
 }
 
+window.wear = wear
 
 function isCalpitalLetter(letter){
     return letter !== letter.toLowerCase();
@@ -230,5 +231,7 @@ function getInlineStyle(property,value){
     return `
     ${JS_to_CSS_property(possibleProperties[0])}:${value};`
 }
+
+
 
 export {dress,wear}

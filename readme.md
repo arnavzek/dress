@@ -5,8 +5,6 @@
 <p align="center">Dress.JS</p>
 
 # A light ass CSS runtime autocompleter
-Wrting css in JS just became fashionable.
-No need to type exact css property.
 When you run your file, Dress.js autocompletes CSS you wrote in JS and turns them into a stylesheet.
 
 # How to use?
@@ -28,12 +26,11 @@ background-color can be written as bC,backC,backColo,backgroundColor...
 ```
 <br><br>
 note: capital c in the second example is important, letter after hyphen must be capital in shorthand
+note: it is recommended to only use three letters for maintaining consistency in a team
 <br><br>
 When there are multiple candidates for a shorthand, the shorter one will be given benifit of doubt<br>
-like if you type "ma", both mask and margin. mask will be choosen as it is shorter
-
-<br>
-but margin is more used. so, most used properties have been registered to one letter shorthand<br>
+like if you type "ma", both mask and margin will be possible candidates. Mask will be choosen as it is shorter
+but margin is more often used. so, most used properties have been registered to one letter shorthand<br>
 m means margin <br>
 b means beackground <br>
 c means color <br>
