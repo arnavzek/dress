@@ -51,8 +51,8 @@ Prefix 'tablet-' For Tablets
 <img src='./demo.png'>
 ```
     //JS
-    import {extraCoat} from '../coat.js'
 
+    import {extraCoat} from '../coat.js'
     extraCoat.main = ' di:grid pI:center c:#fff'
     extraCoat.image = 'pI:center bRa:100vw m:2vw w:12vw  h:12vw b:#000 flo:left'
     extraCoat.title = ' fS:xl'
