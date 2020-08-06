@@ -67,7 +67,7 @@ window.addEventListener('load',()=>{
 
 let extraCoat = {}
 
-export {extraCoat}
+export {extraCoat,coat}
 
 function replaceGlobally(original, searchTxt, replaceTxt) {
     const regex = new RegExp(searchTxt, 'g');
