@@ -1,8 +1,8 @@
 
 <p align="center">
     <img src='./logo.png'>
-    <h1><bold>Coat.JS</bold></h1>
 </p>
+<p align="center">Coat.JS</p>
 
 # A light ass CSS runtime autocompleter
 No need to type exact css property. Coat.js autocompletes
